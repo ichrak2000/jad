@@ -45,7 +45,7 @@
 			<div class="container d-flex align-items-center justify-content-between">
 
 				<h1 class="logo">
-					<a href="{{ path('app_test') }}">Freelancy</a>
+					<a href="{{ path('app_home') }}">Freelancy</a>
 				</h1>
 				<!-- Uncomment below if you prefer to use an image logo -->
 				<!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -53,16 +53,19 @@
 				<nav id="navbar" class="navbar">
 					<ul>
 						<li>
-							<a href="">Home</a>
+							<a href="{{ path('app_utilisateur_index') }}"> Back </a>
 						</li>
 						<li>
-							<a href="">Projects</a>
+							<a href="">Service et Categorie </a>
+						</li>
+												<li>
+							<a href="{{ path('app_utilisateur_show', {'id': app.user.id}) }}"> users </a>
 						</li>
 						<li>
-							<a href="">Your wallet</a>
+							<a href=""> Paiement </a>
 						</li>
 						<li>
-							<a href="">Certifications</a>
+							<a href="">Reclamation </a>
 						</li>
 						<li>
 							<a href="">Support</a>
@@ -71,13 +74,13 @@
 							<ul>
 
 								<li>
-									<a href="{{ path('app_test') }}">
+									<a href="{{ path('app_utilisateur_showProfile', {'id': app.user.id}) }}">
 										Profile
 									</a>
 								</li>
 							</ul>
 							<li>
-								<a href="{{ path('app_test') }}">Log out
+								<a href="{{ path('app_logout') }}">Log out
 								</a>
 							</li>
 						</ul>
@@ -89,6 +92,14 @@
 
 			</div>
 		</header>
+
+   <section id="hero" class="d-flex align-items-center">
+            <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+                <h1>Welcome to Freelancy website </h1>
+                <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            </div>
+        </section>
+
 		<!-- End Header -->
 
 		{% block contentblock %}{% endblock %}
